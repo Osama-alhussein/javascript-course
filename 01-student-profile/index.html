@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Profile</title>
+</head>
+<body>
+
+  <h1>Student Profile</h1>
+
+  <form id="profile-form">
+
+    <label>Full Name:</label>
+    <input type="text" id="full-name" required>
+    <br><br>
+
+    <label>Age:</label>
+    <input type="number" id="age" required>
+    <br><br>
+
+    <label>Country:</label>
+    <input type="text" id="country" required>
+    <br><br>
+
+    <label>Major:</label>
+    <input type="text" id="major" required>
+    <br><br>
+
+    <label>University:</label>
+    <input type="text" id="university">
+    <br><br>
+
+    <label>Phone Number:</label>
+    <input type="text" id="phone">
+    <br><br>
+
+    <label>Are you a student?</label>
+    <input type="radio" name="student" value="Yes" required> Yes
+    <input type="radio" name="student" value="No"> No
+
+    <br><br>
+
+    <label>Are you working?</label>
+    <input type="radio" name="working" value="Yes" required> Yes
+    <input type="radio" name="working" value="No"> No
+
+    <br><br>
+
+    <button type="submit">Submit</button>
+
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>
