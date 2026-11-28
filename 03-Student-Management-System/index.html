@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نظام إدارة الطلاب</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+
+        <header class="page-header">
+            <h1>نظام إدارة الطلاب</h1>
+            <p>إدارة بيانات الطلاب بطريقة سهلة ومنظمة</p>
+        </header>
+
+        <section class="stats-card">
+            <div>
+                <span class="stats-label">إجمالي عدد الطلاب</span>
+                <h2 id="students-count">0</h2>
+            </div>
+            <div class="stats-icon">👨‍🎓</div>
+        </section>
+
+        <section class="form-card">
+            <h2 id="form-title">إضافة طالب جديد</h2>
+
+            <form id="student-form">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="student-name">اسم الطالب</label>
+                        <input
+                            type="text"
+                            id="student-name"
+                            placeholder="أدخل اسم الطالب"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="student-age">العمر</label>
+                        <input
+                            type="number"
+                            id="student-age"
+                            placeholder="أدخل عمر الطالب"
+                            min="1"
+                            max="120"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="student-grade">الدرجة</label>
+                        <input
+                            type="number"
+                            id="student-grade"
+                            placeholder="أدخل الدرجة من 100"
+                            min="0"
+                            max="100"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" id="submit-btn" class="btn btn-primary">
+                        إضافة الطالب
+                    </button>
+
+                    <button
+                        type="button"
+                        id="cancel-edit-btn"
+                        class="btn btn-secondary"
+                        hidden
+                    >
+                        إلغاء التعديل
+                    </button>
+                </div>
+
+            </form>
+        </section>
+
+        <section class="students-card">
+
+            <div class="section-header">
+                <h2>قائمة الطلاب</h2>
+
+                <input
+                    type="search"
+                    id="search-input"
+                    placeholder="ابحث عن طالب بالاسم..."
+                >
+            </div>
+
+            <div class="filter-buttons">
+                <button type="button" id="all-btn" class="btn btn-filter active">
+                    جميع الطلاب
+                </button>
+
+                <button type="button" id="passed-btn" class="btn btn-filter">
+                    الطلاب الناجحون
+                </button>
+
+                <button type="button" id="sort-btn" class="btn btn-filter">
+                    ترتيب حسب الدرجة ↓
+                </button>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>اسم الطالب</th>
+                            <th>العمر</th>
+                            <th>الدرجة</th>
+                            <th>النتيجة</th>
+                            <th>الإجراءات</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="students-list">
+                    </tbody>
+                </table>
+            </div>
+
+            <p id="no-results" class="no-results" hidden>
+                لم يتم العثور على طلاب.
+            </p>
+
+        </section>
+
+        <p id="error-message" class="error-message" hidden></p>
+
+        <footer>
+            <p>نظام إدارة الطلاب © 2026</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
